@@ -3,7 +3,7 @@
  * Theme URI:   http://themeforest.net/item/barcelona-clean-news-magazine-wordpress-theme/13308848
  * Description: Child theme of Barcelona theme.
  * Author: OnClic
- * Author URI:  
+ * Author URI:
  * Template:    barcelona
  * Template Version: 1.4.3
  * Version: 1.0.0
@@ -36,6 +36,10 @@ p{
 
 .home .section-html {
     width: auto !important;
+}
+
+.home .posts-box .post-date{
+	display: none;
 }
 
 .navbar-top {
@@ -83,7 +87,7 @@ p{
 }
 
 .post-content > ul, .post-content > ol {
-	margin: -10px 0 10px;	
+	margin: -10px 0 10px;
 }
 
 .post-content > ul li {
@@ -167,7 +171,7 @@ p{
 .post-content p > .btn:after{
 	content: " >>";
 	font-size: 80%;
-} 
+}
 */
 
 .post-content .col-sm4 a.btn{
@@ -181,7 +185,7 @@ p{
 .post-content blockquote {
 	font-family: Georgia, serif;
 	font-size: 18px;
-	font-style: italic;	
+	font-style: italic;
 	margin: 0.25em 0;
 	padding: 0.25em 50px;
 	line-height: 1.45;
@@ -205,22 +209,28 @@ p{
 	display: block;
 	margin-top: 5px;
 }
- 
+
 blockquote cite:before {
 content: "\2014 \2009";
 }
 
+.psum-labelled .post-details {
+  width: 65%;
+}
 
+.psum-labelled .post-image{
+	width: 35%;
+}
 
 .post-summary .post-image > a {
 	background: none;
-}	
+}
 
 .navbar-top .social-icons {
     font-size: 16px;
 }
 
-.btn{	
+.btn{
 	padding: 8px 18px;
 }
 
@@ -251,7 +261,7 @@ content: "\2014 \2009";
 .fimg-no-thumb .featured-image .post-meta {
 	border: none;
 }
-	
+
 .barcelona-sc-tab .tab-content{
 	border: none;
 }
@@ -265,7 +275,7 @@ content: "\2014 \2009";
 	color: #FFFFFF;
 	padding: 7px;
 	background: #eb6e30 url("http://test.onclic.es/juventud.cordoba.es/wordpress/wp-content/uploads/2016/11/mano-programacion-2.png") no-repeat scroll left bottom;
-	
+
 }
 
 .custom-content-header .banner .title{
@@ -362,7 +372,7 @@ content: "\2014 \2009";
 }
 
 .mosaico .item img{
-	border-radius:7px;	
+	border-radius:7px;
 }
 
 .mosaico .item h3{
@@ -383,6 +393,11 @@ content: "\2014 \2009";
 
 .posts-box {
     margin-top: 40px;
+}
+
+.posts-box-gallery {
+  margin-bottom: 40px;
+  margin-top: 0 !important;
 }
 
 .post-content strong {
@@ -414,7 +429,7 @@ span.wpcf7-list-item {
 
 .barcelona-widget-slider-posts .post-cat{
 	display: none;
-}	
+}
 
 
 .textwidget a:link{
@@ -525,4 +540,3 @@ input[type="checkbox"], input[type="radio"] {
 	}
 
 }
-
