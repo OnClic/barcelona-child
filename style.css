@@ -1,0 +1,528 @@
+/*
+ * Theme Name:  Barcelona. Child
+ * Theme URI:   http://themeforest.net/item/barcelona-clean-news-magazine-wordpress-theme/13308848
+ * Description: Child theme of Barcelona theme.
+ * Author: OnClic
+ * Author URI:  
+ * Template:    barcelona
+ * Template Version: 1.4.3
+ * Version: 1.0.0
+ */
+
+@import 'https://fonts.googleapis.com/css?family=Lato:300,400,700';
+
+a:hover{
+	color: #eb6e30;
+}
+
+p{
+	line-height: 1.5;
+}
+
+
+.textwidget a:link{
+	color: #337ab7;
+}
+.textwidget a:hover{
+	color: #eb6e30;
+}
+
+.textwidget hr{
+	border-color: #777 -moz-use-text-color -moz-use-text-color;
+    border-width: 0.5px 0 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.home .section-html {
+    width: auto !important;
+}
+
+.navbar-top {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.sub-menu li a:before{
+	content: "> ";
+	font-size: 80%;
+}
+
+.box-header .btn-group .btn{
+    font-size: 14px;
+}
+
+.sidebar-none{
+	margin-bottom: 40px;
+}
+
+.fimg-no-thumb .featured-image .vm-middle .post-title {
+	font-size: 28px;
+}
+
+
+.alert p small{
+	line-height: 1.2 !important;
+}
+
+.glyphicon {
+	top: 2px;
+}
+
+/* POST CONTENT */
+
+.post-content > p,
+.post-content > div,
+.post-content > ul,
+.post-content > ol,
+.post-tags {
+	font-family: Lato;
+    font-size: 16px;
+    line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+.post-content > ul, .post-content > ol {
+	margin: -10px 0 10px;	
+}
+
+.post-content > ul li {
+	list-style: none;
+}
+
+.post-content > ul li:before {
+	color: #eb6e30;
+	content: "> ";
+	font-weight: bold;
+}
+
+.post-content .claim{
+	border-bottom: 2px dashed  #e3e3e3;
+	color: #ff5733;
+	padding:12px 8px;
+	text-align: center;
+}
+
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin: 0 0 15px;
+}
+
+.post-content .alert{
+	background: #f8f8f8;
+}
+
+.post-content .alert h4 {
+    text-transform: uppercase;
+}
+
+.post-content a:link,  .post-content a:visited{
+	// color: #337ab7;
+	// border-bottom: 1px dashed #ff6600;
+    //color: #ff6600;
+	border-bottom: 1px dashed #eb6e30;
+    color: #eb6e30;
+	font-weight: bold;
+}
+
+.post-content a:visited{
+	opacity:0.8;
+}
+
+.post-content a:hover{
+	//color: #eb6e30;
+	opacity:0.8;
+}
+
+.post-content p > .btn {
+	//background: #337ab7 none repeat scroll 0 0;
+	background: #eb6e30;
+    border: medium none;
+    border-radius: 3px;
+    color: #fff !important;
+
+	font-family: Montserrat,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+	margin: 20px auto;
+
+    text-transform: uppercase;
+}
+
+.post-content p > .btn:hover {
+	opacity: 0.8;
+}
+
+.post-content p > .btn .fa {
+	margin-right: 7px;
+}
+
+/*
+.post-content p > .btn:after{
+	content: " >>";
+	font-size: 80%;
+} 
+*/
+
+.post-content .col-sm4 a.btn{
+	width: 210px;
+}
+
+.post-content blockquote{
+	background: none;
+}
+
+.post-content blockquote {
+	font-family: Georgia, serif;
+	font-size: 18px;
+	font-style: italic;	
+	margin: 0.25em 0;
+	padding: 0.25em 50px;
+	line-height: 1.45;
+	position: relative;
+	color: #383838;
+}
+
+.post-content blockquote:before {
+	display: block;
+	content: "\201C";
+	font-size: 80px;
+	position: absolute;
+	left: 0px;
+	top: -20px;
+	color: #7a7a7a;
+}
+
+.post-content blockquote cite {
+	color: #999999;
+	font-size: 14px;
+	display: block;
+	margin-top: 5px;
+}
+ 
+blockquote cite:before {
+content: "\2014 \2009";
+}
+
+
+
+.post-summary .post-image > a {
+	background: none;
+}	
+
+.navbar-top .social-icons {
+    font-size: 16px;
+}
+
+.btn{	
+	padding: 8px 18px;
+}
+
+.btn-lg {
+    border-radius: 6px !important;
+    font-size: 16px !important;
+    line-height: 1.33333;
+    padding: 12px 24px !important;
+}
+
+.vm-middle {
+    width: 75%;
+}
+
+.copy-info{
+	font-size:11px;
+}
+
+.featured-posts > .container{
+	padding-top:0;
+	margin-top:22px;
+}
+
+.featured-posts{
+
+}
+
+.fimg-no-thumb .featured-image .post-meta {
+	border: none;
+}
+	
+.barcelona-sc-tab .tab-content{
+	border: none;
+}
+
+.custom-content-header {
+	margin-top: 12px;
+}
+
+.custom-content-header .banner{
+	border-radius: 5px;
+	color: #FFFFFF;
+	padding: 7px;
+	background: #eb6e30 url("http://test.onclic.es/juventud.cordoba.es/wordpress/wp-content/uploads/2016/11/mano-programacion-2.png") no-repeat scroll left bottom;
+	
+}
+
+.custom-content-header .banner .title{
+	margin-left: 100px;
+}
+
+.custom-content-header .banner .fa{
+	margin-right: 10px;
+	margin-top: -5px;
+}
+
+.custom-content-header .banner:hover{
+	// color: #eb6e30;
+	opacity: 0.7;
+}
+
+/* ULTIMA HORA */
+
+.ultima-hora-box{
+	background: #EFEFEF;
+	padding: 19px;
+}
+
+
+.ultima-hora .post-meta{
+	display: none;
+}
+
+.category-ultima-hora .ultima-hora-box,
+.ultima-hora .ultima-hora-box{
+	display: none;
+}
+
+
+.ultima-hora-box .title {
+	text-transform: uppercase;
+	font-size:12px;
+	font-weight: bold;
+	margin-bottom: 3px;
+	margin-top: 0px;
+}
+
+.ultima-hora-box .title a{
+	color: #EB6E30;
+}
+
+.ultima-hora-box ul{
+	margin:0;
+	padding: 0;
+}
+
+.ultima-hora-box li{
+	list-style: none;
+}
+
+.ultima-hora-box li a{
+	display: block;
+	font-size:14px;
+	font-weight: bold;
+}
+
+.ultima-hora-box li a:hover{
+	color: #EB6E30;
+	opacity: 0.8;
+}
+
+.ultima-hora-box li a:after{
+	color: #EB6E30;
+	content: " >>";
+	font-size: smaller;
+}
+
+
+.ultima-hora-box #close{
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+}
+
+.mosaico{
+
+}
+
+.mosaico .item{
+	margin-bottom:26px;
+}
+
+.mosaico .item:hover{
+	opacity: 0.7;
+}
+
+.mosaico .item a{
+
+}
+
+.mosaico .item img{
+	border-radius:7px;	
+}
+
+.mosaico .item h3{
+	color: #FFF;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.mosaico .item p.description{
+	color: #F0ECB3;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.1em;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.posts-box {
+    margin-top: 40px;
+}
+
+.post-content strong {
+	color: unset;
+}
+
+.gallery-icon a {
+    border-bottom: medium none !important;
+}
+
+/* CONTACT FORM */
+
+.wpcf7-submit {
+//	background-color: #337ab7;
+	background-color: #eb6e30;
+	display: block;
+	width: 100%;
+}
+
+.wpcf7-submit:hover {
+	background-color: #eb6e30;
+	opacity: 0.7;
+}
+
+span.wpcf7-list-item {
+	display: block;
+}
+
+
+.barcelona-widget-slider-posts .post-cat{
+	display: none;
+}	
+
+
+.textwidget a:link{
+	border-bottom: 1px dashed #eb6e30;
+    color: #eb6e30;
+    font-weight: bold;
+}
+
+
+
+/* FOOTER */
+
+.footer-widget .widget-title {
+    margin-bottom: 15px;
+}
+
+.footer-widget strong {
+    color: #c7c7c7;
+}
+
+.barcelona-widget-social-media-icons .social-icons li a {
+	border-radius: 50%;
+}
+
+/* CONTACT FORM */
+
+.wpcf7-form {
+
+}
+
+.wpcf7-form h3{
+	margin-bottom: 40px;
+}
+
+.wpcf7-form legend {
+	text-transform: uppercase;
+}
+
+.wpcf7-form label {
+	font-size: 90%;
+	text-transform: none;
+}
+
+.wpcf7-form p {
+	font-weight: normal;
+	text-transform: none;
+}
+
+.wpcf7-form .wpcf7-form-control {
+    margin-top: 3px;
+}
+
+.wpcf7-text, .wpcf7-textarea {
+    padding: 7px 14px;
+}
+
+.wpcf7-list-item-label{
+	text-transform: none;
+	font-weight: normal;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: content-box;
+}
+
+/* ALL IN EVENTS */
+
+.ai1ec-event-avatar img{
+	display: none;
+}
+
+/* EVENTS */
+
+.tribe-events-month-event-title, .tribe-events-tooltip h4 {
+	margin-top: 20px !important;
+}
+
+.tribe-events-sub-nav li a {
+	background: none;
+    color: #337ab7 !important;
+}
+
+.tribe-events-button{
+	font-size: 9px !important;
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+    .fimg-cl .featured-image .fimg-inner {
+        min-height: 300px;
+    }
+
+	.fimg-no-thumb .featured-image .fimg-inner {
+    		min-height: 0;
+	}
+
+    .featured-image .fimg-inner {
+        min-height: 300px;
+    }
+
+
+}
+
+@media (max-width: 767px){
+	.ultima-hora-box{
+		margin-bottom: 15px;
+	}
+
+}
+
