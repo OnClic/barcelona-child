@@ -4,6 +4,7 @@
  * You can modify any function here. Simply copy any function from parent and paste here. It will override the parent's version.
  */
 
+load_theme_textdomain( 'barcelona', get_stylesheet_directory() . '/languages' );
 
 //Activar enlaces
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
@@ -70,7 +71,7 @@ function posts_ultima_hora() {
 	 echo '<ul>';
 
    if($ultima_hora_q->have_posts()) :
-      while($ultima_hora_q->have_posts()) : $ultima_hora_q->the_post();		
+      while($ultima_hora_q->have_posts()) : $ultima_hora_q->the_post();
          echo '<li>';
 		echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
 		echo '</li>';
@@ -97,7 +98,7 @@ if ( ! function_exists( 'barcelona_social_sharing' ) ) {
 			<ul class="list-inline text-center">
 				<li><a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_the_permalink() ); ?>" target="_blank" title="<?php printf( esc_html__( 'Share on %s', 'barcelona' ), 'Facebook' ); ?>"><span class="fa fa-facebook"></span></a></li>
 				<li><a href="https://twitter.com/home?status=<?php echo urlencode( get_the_title() .' - '. get_the_permalink() ); ?>" target="_blank" title="<?php printf( esc_html__( 'Share on %s', 'barcelona' ), 'Twitter' ); ?>"><span class="fa fa-twitter"></span></a></li>
-				
+
 			</ul>
 
 		</div><!-- .post-sharing -->
@@ -105,6 +106,3 @@ if ( ! function_exists( 'barcelona_social_sharing' ) ) {
 
 	}
 }
-
-
-
