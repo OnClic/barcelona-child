@@ -97,7 +97,7 @@ if ( ! function_exists( 'posts_ultima_hora' ) ) {
 		$output .='<h2 class="title"><a href="'. esc_url($category_link) .'" title="Ir a las noticias de Última hora">Última hora</a></h2>';
 		
 	   	if($query->have_posts()) :
-			$output .='<div class="owl-carousel owl-theme owl-loaded" data-dots="false" data-items="1" data-center="false" data-nav="false">';
+			$output .='<div class="owl-carousel owl-theme" data-dots="false" data-items="1" data-nav="false" data-autoplay="true" data-autoplayhoverpause="true" data-mousedrag="true" data-touchdrag="true">';
 		      	while($query->have_posts()) : $query->the_post();		
 			        $output .='<div class="item">';
 						$output .='<a href="' . esc_url( get_permalink() ) . '">' . esc_html__(get_the_title()) . '</a>';
