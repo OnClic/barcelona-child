@@ -68,14 +68,14 @@ if ( ! function_exists( 'barcelona_social_sharing' ) ) {
 if ( ! function_exists( 'posts_ultima_hora' ) ) {
 	/**
 	 * Custom functionality: ultima hora
-	 * 
+	 *
 	 * @author @pabagan
-	 * @param 
-	 * @return void 
+	 * @param
+	 * @return void
 	 */
 	function posts_ultima_hora() {
 		global $wp_query;
-	   	
+
 	   	$output = '';
 
 		$args = array(
@@ -90,15 +90,15 @@ if ( ! function_exists( 'posts_ultima_hora' ) ) {
 	  	// Get the URL of this category
 	  	$category_link = get_category_link($category_id);
 	   	$query = new WP_Query($args);
-	   	
+
 
 	   	// Start output
 		$output .='<div class="ultima-hora-box">';
 		$output .='<h2 class="title"><a href="'. esc_url($category_link) .'" title="Ir a las noticias de Última hora">Última hora</a></h2>';
-		
+
 	   	if($query->have_posts()) :
 			$output .='<div class="owl-carousel owl-theme" data-dots="false" data-items="1" data-nav="false" data-autoplay="true" data-autoplayhoverpause="true" data-mousedrag="true" data-touchdrag="true">';
-		      	while($query->have_posts()) : $query->the_post();		
+		      	while($query->have_posts()) : $query->the_post();
 			        $output .='<div class="item">';
 						$output .='<a href="' . esc_url( get_permalink() ) . '">' . esc_html__(get_the_title()) . '</a>';
 					$output .='</div>';
@@ -118,15 +118,15 @@ if ( ! function_exists( 'posts_ultima_hora' ) ) {
 if ( ! function_exists( 'get_agenda_next_30' ) ) {
 	/**
 	 * Get post categoria agenda de hoy
-	 * 
+	 *
 	 * @author @pabagan
-	 * @param 
-	 * @return void 
+	 * @param
+	 * @return void
 	 */
 	function get_agenda_next_30() {
-		// 
+		//
 		// Dentro de query
-		// 
+		//
 		//$evento_fecha = get_post_meta( $post->ID, 'evento-fecha', true );
 
 
@@ -136,9 +136,9 @@ if ( ! function_exists( 'get_agenda_next_30' ) ) {
 
 		$ultima_hora_id = 52;
 	   	$output = '';
-		
+
 		$args = array(
-		    'post_type' 	=> 'post', 
+		    'post_type' 	=> 'post',
 		    'cat'           => (integer) $ultima_hora_id,
 		    'post_status'   => 'publish',
 		    'date_query'    => array(
@@ -149,7 +149,7 @@ if ( ! function_exists( 'get_agenda_next_30' ) ) {
 		$query = new WP_Query( $args );
 		$output .='<div class="posts-wrapper row">';
 		if($query->have_posts()) :
-	      	while($query->have_posts()) : $query->the_post();		
+	      	while($query->have_posts()) : $query->the_post();
 					$output .='<div class="col col-md-3 col-sm-6 mas-item">';
 						$output .='<article class="post-summary post-format-standard clearfix">';
 							$output .='<div class="post-image">';
@@ -177,10 +177,10 @@ if ( ! function_exists( 'get_agenda_next_30' ) ) {
 if ( ! function_exists( 'get_agenda_dia' ) ) {
 	/**
 	 * Get post categoria agenda de hoy
-	 * 
+	 *
 	 * @author @pabagan
-	 * @param 
-	 * @return void 
+	 * @param
+	 * @return void
 	 */
 	function get_agenda_dia() {
 		echo '<p>esta es la agenda de hoy...</p>';
@@ -190,10 +190,10 @@ if ( ! function_exists( 'get_agenda_dia' ) ) {
 if ( ! function_exists( 'get_agenda_semana' ) ) {
 	/**
 	 * Get post categoria agenda de esta semana
-	 * 
+	 *
 	 * @author @pabagan
-	 * @param 
-	 * @return void 
+	 * @param
+	 * @return void
 	 */
 	function get_agenda_semana() {
 		echo '<p>esta es la agenda semanal...</p>';
@@ -203,10 +203,10 @@ if ( ! function_exists( 'get_agenda_semana' ) ) {
 if ( ! function_exists( 'get_agenda_mes' ) ) {
 	/**
 	 * Get post categoria agenda de esta mes
-	 * 
+	 *
 	 * @author @pabagan
-	 * @param 
-	 * @return void 
+	 * @param
+	 * @return void
 	 */
 	function get_agenda_mes() {
 		echo '<p>esta es la agenda mensual...</p>';
@@ -221,31 +221,45 @@ if ( ! function_exists( 'get_agenda_mes' ) ) {
  * @since Galatea 1.0
  * @see ot_register_meta_box()
  */
-function gx_add_OT_metaboxes() {
+ function gx_add_OT_metaboxes() {
 
-    // Post 
-    $meta_post = array(
-        'id'        => 'meta_post',
-        'title'     => esc_html__( 'Fecha de evento', 'geniux_lang' ),
-        //'desc'      => esc_html__( 'No description', 'geniux_lang' ),
-        'pages'     => array( 'post' ),
-        'context'   => 'normal',
-        'priority'  => 'high',
-        'fields'    => array(
-            // Sound Cloud
-            array(
-                'id'          => 'evento-fecha',
-				//'label'       => __( 'Fecha de evento', 'geniux_lang' ),
-				//'desc'        => __( 'Your description', 'geniux_lang' ),
-				//'type'        => 'date-picker',
-				'type'        => 'date-time-picker',
-            ),
-        ),
-    );
+     // Post
+     $meta_post = array(
+         'id'        => 'meta_post',
+         'title'     => esc_html__( 'Detalles del evento', 'geniux_lang' ),
+         //'desc'      => esc_html__( 'No description', 'geniux_lang' ),
+         'pages'     => array( 'post' ),
+         'context'   => 'normal',
+         'priority'  => 'high',
+         'fields'    => array(
+             array(
+                 'id'          => 'evento-fecha-inicio',
+ 								'label'       => __( 'Fecha de inicio', 'geniux_lang' ),
+ 								//'desc'        => __( 'Your description', 'geniux_lang' ),
+ 								//'type'        => 'date-picker',
+ 								'type'        => 'date-time-picker',
+             ),
+ 						array(
+                 'id'          => 'evento-fecha-fin',
+ 								'label'       => __( 'Fecha de finalización', 'geniux_lang' ),
+ 								//'desc'        => __( 'Your description', 'geniux_lang' ),
+ 								//'type'        => 'date-picker',
+ 								'type'        => 'date-time-picker',
+             ),
+ 						array(
+                 'id'          => 'evento-lugar',
+ 								'label'       => __( 'Lugar', 'geniux_lang' ),
+ 								'desc'        => __( '¿En qué lugar se desarrolla?', 'geniux_lang' ),
+ 								//'type'        => 'date-picker',
+ 								'type'        => 'text',
+             ),
+         ),
+     );
+
 
     if ( function_exists( 'ot_register_meta_box' ) ) {
         ot_register_meta_box( $meta_post );
     }
-        
+
 }
 add_action( 'admin_init', 'gx_add_OT_metaboxes' );

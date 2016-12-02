@@ -348,6 +348,16 @@ content: "\2014 \2009";
 	font-size: smaller;
 }
 
+.ultima-hora-box .item{
+		font-weight: bold;
+}
+
+.ultima-hora-box .item a:after{
+	color: #EB6E30;
+	content: " >>";
+	font-size: smaller;
+}
+
 
 .ultima-hora-box #close{
     float:right;
