@@ -43,49 +43,6 @@ function add_category_to_single($classes, $class) {
 
 add_theme_support( 'post-formats', array( 'aside', 'quote' ) );
 
-
-/*
- * Custom functionality: ultima hora
- */
-
-function posts_ultima_hora() {
-	global $wp_query;
-
-	$ultima_hora_params = array(
-		'category_name'  	=> 'ultima-hora',
-		'posts_per_page'        => 1,
-		'post_type'             => 'post',
-		'post_status'           => 'publish',
-	);
-
-	// Get the ID of a given category
-  $category_id = get_cat_ID( 'Última hora' );
-  // Get the URL of this category
-  $category_link = get_category_link( $category_id );
-
-
-   $ultima_hora_q = new WP_Query($ultima_hora_params);
-
-	 echo '<div class="ultima-hora-box">';
-	 echo '<h2 class="title"><a href="'. esc_url($category_link) .'" title="Ir a las noticias de Última hora">Última hora</a></h2>';
-	 echo '<ul>';
-
-   if($ultima_hora_q->have_posts()) :
-      while($ultima_hora_q->have_posts()) : $ultima_hora_q->the_post();
-         echo '<li>';
-		echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
-		echo '</li>';
-      endwhile;
-   endif;
-
-		echo '</ul>';
-	echo '</div>';
-
-	wp_reset_query();
- }
-
-
-
 /*
  * Social Sharing
  */
@@ -106,3 +63,143 @@ if ( ! function_exists( 'barcelona_social_sharing' ) ) {
 
 	}
 }
+
+
+if ( ! function_exists( 'posts_ultima_hora' ) ) {
+	/**
+	 * Custom functionality: ultima hora
+	 * 
+	 * @author @pabagan
+	 * @param 
+	 * @return void 
+	 */
+	function posts_ultima_hora() {
+		global $wp_query;
+	   	
+	   	$output = '';
+
+		$args = array(
+			'category_name'  	=> 'ultima-hora',
+			'showposts'			=> 6,
+			'post_type'        	=> 'post',
+			'post_status'      	=> 'publish',
+		);
+
+		// Get the ID of a given category
+	  	$category_id = get_cat_ID('Última hora');
+	  	// Get the URL of this category
+	  	$category_link = get_category_link($category_id);
+	   	$query = new WP_Query($args);
+	   	
+
+	   	// Start output
+		$output .='<div class="ultima-hora-box">';
+		$output .='<h2 class="title"><a href="'. esc_url($category_link) .'" title="Ir a las noticias de Última hora">Última hora</a></h2>';
+		
+	   	if($query->have_posts()) :
+			$output .='<div class="owl-carousel owl-theme owl-loaded" data-dots="false" data-items="1" data-center="false" data-nav="false">';
+		      	while($query->have_posts()) : $query->the_post();		
+			        $output .='<div class="item">';
+						$output .='<a href="' . esc_url( get_permalink() ) . '">' . esc_html__(get_the_title()) . '</a>';
+					$output .='</div>';
+		      	endwhile;
+			$output .='</div>';
+	   	endif;
+
+		$output .='</div>';
+
+		echo $output;
+
+		wp_reset_query();
+	}
+}
+
+
+if ( ! function_exists( 'get_agenda_next_30' ) ) {
+	/**
+	 * Get post categoria agenda de hoy
+	 * 
+	 * @author @pabagan
+	 * @param 
+	 * @return void 
+	 */
+	function get_agenda_next_30() {
+		$ultima_hora_id = 52;
+	   	$output = '';
+		
+		$args = array(
+		    'post_type' 	=> 'post', 
+		    'cat'           => (integer) $ultima_hora_id,
+		    'post_status'   => 'publish',
+		    'date_query'    => array(
+		        'column'  => 'post_date',
+		        'after'   => '- 30 days'
+		    )
+		);
+		$query = new WP_Query( $args );
+		$output .='<div class="posts-wrapper row">';
+		if($query->have_posts()) :
+	      	while($query->have_posts()) : $query->the_post();		
+					$output .='<div class="col col-md-3 col-sm-6 mas-item">';
+						$output .='<article class="post-summary post-format-standard clearfix">';
+							$output .='<div class="post-image">';
+								$output .= the_post_thumbnail( 'barcelona-xs' );
+							$output .='</div>';
+
+							$output .='<div class="post-details">';
+								$output .='<h2 class="post-title">';
+									$output .='<a href="' . esc_url( get_permalink() ) . '">' . esc_html__(get_the_title()) . '</a>';
+								$output .='</h2>';
+								$output .= barcelona_post_meta(['date'], false, false);
+							$output .='</div>';
+						$output .='</article>';
+					$output .='</div>';
+				$output .='</div>';
+	      	endwhile;
+	   	endif;
+		$output .='</div>';
+
+		echo $output;
+
+	}
+}
+
+if ( ! function_exists( 'get_agenda_dia' ) ) {
+	/**
+	 * Get post categoria agenda de hoy
+	 * 
+	 * @author @pabagan
+	 * @param 
+	 * @return void 
+	 */
+	function get_agenda_dia() {
+		echo '<p>esta es la agenda de hoy...</p>';
+	}
+}
+
+if ( ! function_exists( 'get_agenda_semana' ) ) {
+	/**
+	 * Get post categoria agenda de esta semana
+	 * 
+	 * @author @pabagan
+	 * @param 
+	 * @return void 
+	 */
+	function get_agenda_semana() {
+		echo '<p>esta es la agenda semanal...</p>';
+	}
+}
+
+if ( ! function_exists( 'get_agenda_mes' ) ) {
+	/**
+	 * Get post categoria agenda de esta mes
+	 * 
+	 * @author @pabagan
+	 * @param 
+	 * @return void 
+	 */
+	function get_agenda_mes() {
+		echo '<p>esta es la agenda mensual...</p>';
+	}
+}
+
