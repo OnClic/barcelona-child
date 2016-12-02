@@ -124,6 +124,16 @@ if ( ! function_exists( 'get_agenda_next_30' ) ) {
 	 * @return void 
 	 */
 	function get_agenda_next_30() {
+		// 
+		// Dentro de query
+		// 
+		//$evento_fecha = get_post_meta( $post->ID, 'evento-fecha', true );
+
+
+		// Checking if the date has passed
+		// $date = new DateTime( ot_get_option( 'evento-fecha' ) );
+		// $now  = new DateTime( "now" );
+
 		$ultima_hora_id = 52;
 	   	$output = '';
 		
@@ -203,3 +213,39 @@ if ( ! function_exists( 'get_agenda_mes' ) ) {
 	}
 }
 
+
+/**
+ * Register Option Tree metaboxes.
+ *
+ * @author @pabagan
+ * @since Galatea 1.0
+ * @see ot_register_meta_box()
+ */
+function gx_add_OT_metaboxes() {
+
+    // Post 
+    $meta_post = array(
+        'id'        => 'meta_post',
+        'title'     => esc_html__( 'Fecha de evento', 'geniux_lang' ),
+        //'desc'      => esc_html__( 'No description', 'geniux_lang' ),
+        'pages'     => array( 'post' ),
+        'context'   => 'normal',
+        'priority'  => 'high',
+        'fields'    => array(
+            // Sound Cloud
+            array(
+                'id'          => 'evento-fecha',
+				//'label'       => __( 'Fecha de evento', 'geniux_lang' ),
+				//'desc'        => __( 'Your description', 'geniux_lang' ),
+				//'type'        => 'date-picker',
+				'type'        => 'date-time-picker',
+            ),
+        ),
+    );
+
+    if ( function_exists( 'ot_register_meta_box' ) ) {
+        ot_register_meta_box( $meta_post );
+    }
+        
+}
+add_action( 'admin_init', 'gx_add_OT_metaboxes' );
