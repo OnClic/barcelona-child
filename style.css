@@ -3,7 +3,7 @@
  * Theme URI:   http://themeforest.net/item/barcelona-clean-news-magazine-wordpress-theme/13308848
  * Description: Child theme of Barcelona theme.
  * Author: OnClic
- * Author URI:
+ * Author URI: http://onclic.es
  * Template:    barcelona
  * Template Version: 1.4.3
  * Version: 1.0.0
@@ -441,13 +441,11 @@ span.wpcf7-list-item {
 	display: none;
 }
 
-
 .textwidget a:link{
 	border-bottom: 1px dashed #eb6e30;
     color: #eb6e30;
     font-weight: bold;
 }
-
 
 
 /* FOOTER */

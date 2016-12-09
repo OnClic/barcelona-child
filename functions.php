@@ -69,7 +69,7 @@ if ( ! function_exists( 'posts_ultima_hora' ) ) {
 	/**
 	 * Custom functionality: ultima hora
 	 *
-	 * @author @pabagan
+	 * @author @pabagan && @alvaro
 	 * @param
 	 * @return void
 	 */
@@ -80,9 +80,9 @@ if ( ! function_exists( 'posts_ultima_hora' ) ) {
 
 		$args = array(
 			'category_name'  	=> 'ultima-hora',
-			'showposts'			=> 6,
-			'post_type'        	=> 'post',
-			'post_status'      	=> 'publish',
+			'showposts'				=> 7,
+			'post_type'       => 'post',
+			'post_status'     => 'publish',
 		);
 
 		// Get the ID of a given category
@@ -97,7 +97,7 @@ if ( ! function_exists( 'posts_ultima_hora' ) ) {
 		$output .='<h2 class="title"><a href="'. esc_url($category_link) .'" title="Ir a las noticias de Última hora">Última hora</a></h2>';
 
 	   	if($query->have_posts()) :
-			$output .='<div class="owl-carousel owl-theme" data-dots="false" data-items="1" data-nav="false" data-autoplay="true" data-autoplayhoverpause="true" data-mousedrag="true" data-touchdrag="true">';
+			$output .='<div id="news" class="owl-carousel owl-theme" data-dots="false" data-items="1" data-nav="false" data-autoplay="true" data-autoplayhoverpause="true" data-mousedrag="true" data-autoplayTimeout="4000" data-smartSpeed="1000" data-animateOut="fadeOut" data-animateIn="fadeIn"  data-touchdrag="true">';
 		      	while($query->have_posts()) : $query->the_post();
 			        $output .='<div class="item">';
 						$output .='<a href="' . esc_url( get_permalink() ) . '">' . esc_html__(get_the_title()) . '</a>';
